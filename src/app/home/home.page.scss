@@ -1,0 +1,112 @@
+:root {
+    /* Variáveis de tema claro */
+    --ion-color-light-bg: #ffffff;
+    --ion-color-light-text: #000000;
+    --ion-color-light-secondary: #f5f5f5;
+    --ion-color-light-border: #dddddd;
+  
+    /* Variáveis de tema escuro */
+    --ion-color-dark-bg: #1e1e1e;
+    --ion-color-dark-text: #ffffff;
+    --ion-color-dark-secondary: #2c2c2c;
+    --ion-color-dark-border: #444444;
+  
+    /* Variáveis dinâmicas padrão */
+    --ion-background: var(--ion-color-light-bg);
+    --ion-text-color: var(--ion-color-light-text);
+    --ion-secondary-bg: var(--ion-color-light-secondary);
+    --ion-border-color: var(--ion-color-light-border);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ion-background: var(--ion-color-dark-bg);
+      --ion-text-color: var(--ion-color-dark-text);
+      --ion-secondary-bg: var(--ion-color-dark-secondary);
+      --ion-border-color: var(--ion-color-dark-border);
+    }
+  }
+  
+  /* Fundo do conteúdo */
+  ion-content {
+    --background: var(--ion-background);
+    color: var(--ion-text-color);
+  }
+  
+  /* Barra de ferramentas */
+  ion-toolbar {
+    text-align: center;
+    --background: var(--ion-secondary-bg);
+    border-bottom: 1px solid var(--ion-border-color);
+  }
+  
+  ion-title {
+    color: var(--ion-text-color);
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Itens da lista */
+  ion-item {
+    --background: var(--ion-background);
+    --color: var(--ion-text-color);
+    border-bottom: 1px solid var(--ion-border-color);
+  }
+  
+  /* Botões dentro dos itens */
+  ion-button {
+    --color: var(--ion-text-color);
+    --background: var(--ion-secondary-bg);
+    --ripple-color: var(--ion-border-color);
+  }
+  
+  ion-button[color="primary"] {
+    --background: #007bff; /* Azul principal */
+    --color: #ffffff; /* Texto branco */
+  }
+  
+  ion-button[color="success"] {
+    --background: #28a745; /* Verde principal */
+    --color: #ffffff; /* Texto branco */
+  }
+  
+  ion-button[color="danger"] {
+    --background: #dc3545; /* Vermelho principal */
+    --color: #ffffff; /* Texto branco */
+  }
+  
+  /* Estilo para itens marcados como "pegos" */
+  .riscar {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  /* Input de adicionar item */
+  ion-input {
+    --color: var(--ion-text-color);
+    --placeholder-color: #888888;
+    border: 1px solid var(--ion-border-color);
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: var(--ion-secondary-bg);
+  }
+  
+  /* Efeitos ao passar o mouse */
+  ion-button:hover {
+    filter: brightness(0.9);
+  }
+  
+  ion-item:hover {
+    background-color: var(--ion-secondary-bg);
+    cursor: pointer;
+  }
+  
+  /* Personalização adicional para ícones */
+  ion-icon {
+    color: var(--ion-text-color);
+  }
+  
+  ion-button[color="danger"] ion-icon {
+    color: #dc3545;
+  }
+  

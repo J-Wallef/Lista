@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Compras
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Adicionar um item -->
+  <ion-item>
+    <ion-input [(ngModel)]="newItem" placeholder="Adicione um item"></ion-input>
+    <ion-button (click)="addItem()" expand="full" color="success">Adicionar</ion-button>
+  </ion-item>
+
+  <!-- Lista de itens -->
+  <ion-list>
+    <ion-item *ngFor="let item of items; let i = index">
+      <ion-label [ngClass]="{ 'riscar': item.isChecked }">{{ item.name }}</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="toggleItem(i)">
+          <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+        </ion-button>
+        <ion-button (click)="editItem(i)">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" (click)="deleteItem(i)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
